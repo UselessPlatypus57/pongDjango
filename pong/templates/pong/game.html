@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title>test</title>
+    <style>
+        body {background: #111; color:#eee; font-family:sans-serif; text-align:center; }
+        canvas {background: #000; border:2px solid #444; }
+        input { padding: 4px; }
+        #board {display: inline-block; text-align:left; } 
+    </style>
+</head>
+
+<body>
+    <h1>Pong</h1>
+    <p>
+        <input id="name" palceholder="Your name" maxlength="20">
+        W/S or ↑/↓ to move &middot; Space to start &middot; First to 5 wins
+    </p>
+    <canvas id="game" width="800" height="500"></canvas>
+    <h2>Top 10</h2>
+    <ol id="board"></ol>
+
+    <script>const CSRF_TOKEN = "{{ csrf_token }}";</script>
+    <script src="{% static 'pong/pong.js' %}"></script>
+</body>
+</html>
